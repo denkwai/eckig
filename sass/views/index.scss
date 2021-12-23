@@ -1,0 +1,58 @@
+.site-branding {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.site-main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content-card {
+  width: 33.3333333333333%;
+  margin: 0;
+  position: relative;
+  
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  a {
+    color: #fff;
+    text-shadow: 0 0 8px #000;
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .entry-header,
+  .post-thumbnail {
+    position: absolute;
+  }
+
+  .entry-header {
+    inset: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    z-index: 1;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .entry-title {
+    font-size: 15px;
+  }
+
+  .post-thumbnail {
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

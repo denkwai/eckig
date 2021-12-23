@@ -1,0 +1,9 @@
+.site-footer {
+  position: fixed;
+  inset: auto 0 0;
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(5px);
+  padding: 5px;
+  text-align: center;
+  z-index: 1;
+}
