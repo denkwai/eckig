@@ -33,10 +33,13 @@ wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css')
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
+					'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<li class="nav-card nav-card--double nav-card--search">' . get_search_form( FALSE ) . '</li></ul>',
 					'menu_id'        => 'primary-menu',
 					'walker'         => new AWP_Menu_Walker()
 				)
 			);
+
+			
 
 			/* Start the Loop */
 			// while ( have_posts() ) :
@@ -55,7 +58,7 @@ wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css')
 
 			// endwhile;
 
-			the_posts_navigation();
+			// the_posts_navigation();
 
 		else :
 
@@ -68,5 +71,5 @@ wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css')
 
 <?php
 // ORIGINAL CODE
-get_sidebar();
+// get_sidebar();
 get_footer();

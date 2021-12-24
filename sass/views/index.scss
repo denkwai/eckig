@@ -65,3 +65,30 @@
     height: 100%;
   }
 }
+
+.nav-card--double {
+  width: 66.6666666666666%;
+  align-self: stretch;
+  padding: .5rem;
+
+  &::before {
+    display: none;
+  }
+}
+
+.nav-card--search {
+  background-color: lightseagreen;
+
+  .search-form {
+    width: 100%;
+
+    label {
+      display: block;
+    }
+
+    .search-field {
+      display: block;
+      width: 100%;
+    }
+  }
+}

@@ -219,4 +219,8 @@ class AWP_Menu_Walker extends Walker_Nav_Menu {
 	function end_el(&$output, $item, $depth=0, $args=null) {
 		$output .= '</li>';
 	}
+
+	function end_lvl(&$output, $depth=0, $args=null) { 
+		$output .= 'end';
+	}
 }
