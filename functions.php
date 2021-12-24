@@ -186,3 +186,37 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+class AWP_Menu_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
+		$output .= "<li class='nav-card" .  implode(" ", $item->classes) . "'>";
+ 
+		if ($item->url && $item->url != '#') {
+			$output .= '<a class="nav-card-link" href="' . $item->url . '">';
+		} else {
+			$output .= '<span>';
+		}
+
+		$output .= '<span class="nav-title">' . $item->title . '</a>';
+ 
+		if ($item->url&& $item->url != '#') {
+			$output .= '</a>';
+		} else {
+			$output .= '</span>';
+		}
+
+		if ( 'category' == $item->object ) {
+			$output .= z_taxonomy_image($item->object_id, 'full', array(
+				'class' => 'nav-thumbnail'
+			), FALSE);
+		}
+		else {
+			$output .= get_the_post_thumbnail($item->object_id, 'full', array(
+				'class' => 'nav-thumbnail'
+			));
+		}
+	}
+
+	function end_el(&$output, $item, $depth=0, $args=null) {
+		$output .= '</li>';
+	}
+}

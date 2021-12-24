@@ -12,9 +12,9 @@
  * @package eckig
  */
 
-get_header();
+get_header('menuless', [ 'hide_menu' => TRUE ]);
 
-wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css', false, '1.1', 'all');
+wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css');
 ?>
 
 	<main id="primary" class="site-main">
@@ -34,26 +34,26 @@ wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css',
 				array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
-					'link_after'     => function_exists('z_taxonomy_image') ? z_taxonomy_image() : eckig_post_thumbnail()
+					'walker'         => new AWP_Menu_Walker()
 				)
 			);
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			// while ( have_posts() ) :
+			// 	the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				// ORIGINAL CODE
-				// get_template_part( 'template-parts/content', get_post_type() );
+			// 	/*
+			// 	 * Include the Post-Type-specific template for the content.
+			// 	 * If you want to override this in a child theme, then include a file
+			// 	 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+			// 	 */
+			// 	// ORIGINAL CODE
+			// 	// get_template_part( 'template-parts/content', get_post_type() );
 
-				// NEW TEMPLATE
-				get_template_part( 'template-parts/content-card', get_post_type() );
+			// 	// NEW TEMPLATE
+			// 	get_template_part( 'template-parts/content-card', get_post_type() );
 
-			endwhile;
+			// endwhile;
 
 			the_posts_navigation();
 

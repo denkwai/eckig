@@ -9,6 +9,11 @@
  * @package eckig
  */
 
+ $hide_menu = FALSE;
+
+ if ( $args['hide_menu'] ) {
+	 $hide_menu = $args['hide_menu'];
+ }
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -23,7 +28,7 @@
 
 	wp_head();
 
-	wp_enqueue_style('header', get_template_directory_uri() . '/css/views/header.css', false, '1.1', 'all');
+	wp_enqueue_style('header', get_template_directory_uri() . '/css/views/header.css');
 
 	?>
 </head>
@@ -53,6 +58,9 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<?php
+		if ( !$hide_menu ) {
+		?>
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="<?php esc_html_e( 'Primary Menu', 'eckig' ); ?>"></button>
 			<?php
@@ -64,4 +72,7 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<?php
+		}
+		?>
 	</header><!-- #masthead -->
