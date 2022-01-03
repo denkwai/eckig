@@ -24,6 +24,8 @@
 
 	<?php
 
+	wp_enqueue_style('theme', get_template_directory_uri() . '/css/theme.css');
+
 	wp_enqueue_style('fonts-lato', get_template_directory_uri() . '/fonts/Lato/Lato.css', false, '1.1', 'all');
 
 	wp_head();
@@ -57,22 +59,28 @@
 				<p class="site-description"><?php echo $eckig_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-
-		<?php
-		if ( !$hide_menu ) {
-		?>
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="<?php esc_html_e( 'Primary Menu', 'eckig' ); ?>"></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-		<?php
-		}
-		?>
 	</header><!-- #masthead -->
+
+	
+
+<?php
+if ( !$hide_menu ) {
+?>
+<nav id="site-navigation" class="main-navigation">
+	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="<?php esc_html_e( 'Primary Menu', 'eckig' ); ?>"></button>
+	<?php
+		wp_enqueue_style('main-menu', get_template_directory_uri() . '/css/components/nav-card.css');
+
+		wp_nav_menu(
+			array(
+				'theme_location' => 'menu-1',
+				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<li class="nav-card nav-card--double nav-card--search">' . get_search_form( FALSE ) . '</li></ul>',
+				'menu_id'        => 'primary-menu',
+				'walker'         => new AWP_Menu_Walker()
+			)
+		);
+	?>
+</nav><!-- #site-navigation -->
+<?php
+}
+?>

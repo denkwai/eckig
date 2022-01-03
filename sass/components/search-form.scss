@@ -1,0 +1,36 @@
+.search-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+
+  .search-field {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 3px black solid;
+    font-size: 24px;
+    color: #000;
+  
+    &::placeholder {
+      color: rgba(0, 0, 0, .7);
+    }
+  }
+
+  .search-submit {
+    background: transparent url(../../images/icons/search.svg) center center no-repeat;
+    border: 3px black solid;
+    border-radius: 0;
+    margin-top: -3px;
+    padding: .5rem 1rem;
+    color: black;
+    width: 40px;
+    height: 40px;
+    text-indent: 1000px;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}

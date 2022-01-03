@@ -30,6 +30,9 @@ wp_enqueue_style('index', get_template_directory_uri() . '/css/views/index.css')
 				<?php
 			endif;
 
+			wp_enqueue_style('main-menu', get_template_directory_uri() . '/css/components/nav-card.css');
+
+
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',

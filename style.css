@@ -966,3 +966,11 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+#primary-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}

@@ -20,6 +20,7 @@
     "@wordpress/scripts": "^12.1.0",
     "dir-archiver": "^1.1.1",
     "node-sass": "^4.14.1",
+    "postcss": "^8.4.5",
     "rtlcss": "^2.5.0"
   },
   "rtlcssConfig": {
@@ -36,8 +37,8 @@
     "map": false
   },
   "scripts": {
-    "watch": "node-sass sass/ -o ./css --source-map true --output-style expanded --indent-type tab --indent-width 1 -w -r",
-    "compile:css": "node-sass sass/ -o ./css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "watch": "node-sass -rw sass/ -o css/ --source-map true --output-style expanded --indent-type tab --indent-width 1",
+    "compile:css": "node-sass -r sass/ -o css/ && stylelint \"*.css\" --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
