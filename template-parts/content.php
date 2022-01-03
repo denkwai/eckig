@@ -23,7 +23,7 @@
 			<div class="entry-meta">
 				<?php
 				eckig_posted_on();
-				eckig_posted_by();
+				// Original code: eckig_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

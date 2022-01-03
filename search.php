@@ -8,9 +8,11 @@
  */
 
 get_header();
+
+wp_enqueue_style('list', get_template_directory_uri() . '/css/views/list.css', false, '1.1', 'all');
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main container">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -22,6 +24,8 @@ get_header();
 					?>
 				</h1>
 			</header><!-- .page-header -->
+
+			<section class="post-list">
 
 			<?php
 			/* Start the Loop */
@@ -36,6 +40,12 @@ get_header();
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
+
+			?>
+
+			</section>
+
+			<?php
 
 			the_posts_navigation();
 

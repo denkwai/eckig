@@ -28,6 +28,8 @@
 
 	wp_enqueue_style('fonts-lato', get_template_directory_uri() . '/fonts/Lato/Lato.css', false, '1.1', 'all');
 
+	wp_enqueue_style('global', get_template_directory_uri() . '/css/global.css', false, '1.1', 'all');
+
 	wp_head();
 
 	wp_enqueue_style('header', get_template_directory_uri() . '/css/views/header.css');
@@ -61,7 +63,6 @@
 		</div><!-- .site-branding -->
 	</header><!-- #masthead -->
 
-	
 
 <?php
 if ( !$hide_menu ) {
@@ -69,16 +70,7 @@ if ( !$hide_menu ) {
 <nav id="site-navigation" class="main-navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="<?php esc_html_e( 'Primary Menu', 'eckig' ); ?>"></button>
 	<?php
-		wp_enqueue_style('main-menu', get_template_directory_uri() . '/css/components/nav-card.css');
-
-		wp_nav_menu(
-			array(
-				'theme_location' => 'menu-1',
-				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<li class="nav-card nav-card--double nav-card--search">' . get_search_form( FALSE ) . '</li></ul>',
-				'menu_id'        => 'primary-menu',
-				'walker'         => new AWP_Menu_Walker()
-			)
-		);
+		get_template_part( 'template-parts/menu-main' );
 	?>
 </nav><!-- #site-navigation -->
 <?php

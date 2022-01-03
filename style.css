@@ -699,11 +699,19 @@ textarea {
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+	display: flex;
+}
+
+.main-navigation ul,
+#primary-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
@@ -965,12 +973,4 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
-}
-
-#primary-menu {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
 }

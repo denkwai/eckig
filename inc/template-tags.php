@@ -25,11 +25,15 @@ if ( ! function_exists( 'eckig_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+
+		/* Original code
 		$posted_on = sprintf(
-			/* translators: %s: post date. */
+			// translators: %s: post date.
 			esc_html_x( 'Posted on %s', 'post date', 'eckig' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
+		*/
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
@@ -58,7 +62,7 @@ if ( ! function_exists( 'eckig_entry_footer' ) ) :
 	 */
 	function eckig_entry_footer() {
 		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
+		if ( 'post' === get_post_type() && !is_category() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'eckig' ) );
 			if ( $categories_list ) {
@@ -106,7 +110,7 @@ if ( ! function_exists( 'eckig_entry_footer' ) ) :
 				),
 				wp_kses_post( get_the_title() )
 			),
-			'<span class="edit-link">',
+			'<span class="edit-link button is-info">',
 			'</span>'
 		);
 	}

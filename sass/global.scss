@@ -1,0 +1,11 @@
+@import '../node_modules/bulma/css/bulma.css';
+
+@import './components/search-form.scss';
+
+.post-edit-link {
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+}
