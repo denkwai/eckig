@@ -1,11 +1,42 @@
 @import '../node_modules/bulma/css/bulma.css';
 
 @import './components/search-form.scss';
+@import './views/post.scss';
 
 .post-edit-link {
   color: #fff;
 
   &:visited {
     color: #fff;
+  }
+}
+
+.site-title,
+.site-title a,
+.site-title a:visited {
+  color: #000;
+}
+
+.site-main {
+  padding-bottom: 3rem;
+}
+
+.single .entry-header {
+  justify-content: flex-end;
+}
+
+.single .entry-title,
+.page-title {
+  width: 100%;
+  font-weight: 900 !important;
+  font-size: 3rem !important;
+  text-align: center;
+  margin: 0;
+  color: #000;
+
+  &::before,
+  &::after {
+    content: '~';
+    padding: 0 1rem;
   }
 }

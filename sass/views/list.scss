@@ -1,49 +1,8 @@
-.page-title--category {
+.page-title--category,
+.no-results {
   padding: 0 1rem;
-}
 
-.post-list {
-  .post {
-    position: relative;
-
-    .entry-header,
-    .entry-content,
-    .entry-footer {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      width: 100%;
-      background: rgba(0, 0, 0, .6);
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      backdrop-filter: blur(10px);
-      margin-bottom: -1.5rem;
-
-      a {
-        color: #fff;
-      }
-
-      .entry-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-
-      .entry-meta {
-        font-size: 0.75rem;
-      }
-    }
-
-    .post-thumbnail {
-      display: block;
-    }
-
-    .entry-content {
-      margin: 1rem 0;
-    }
+  .search-form {
+    padding: 0;
   }
 }

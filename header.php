@@ -26,7 +26,7 @@
 
 	wp_enqueue_style('theme', get_template_directory_uri() . '/css/theme.css');
 
-	wp_enqueue_style('fonts-lato', get_template_directory_uri() . '/fonts/Lato/Lato.css', false, '1.1', 'all');
+	wp_enqueue_style('fonts-lato', get_template_directory_uri() . '/fonts/Kanit/Kanit.css', false, '1.1', 'all');
 
 	wp_enqueue_style('global', get_template_directory_uri() . '/css/global.css', false, '1.1', 'all');
 
