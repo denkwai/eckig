@@ -62,6 +62,7 @@ if ( ! function_exists( 'eckig_header_style' ) ) :
 			.site-description {
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
+				color:  #000000;
 				}
 			<?php
 			// If the user has set a custom color for the text use that.
